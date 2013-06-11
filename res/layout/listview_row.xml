@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="right">
+    
+  <View 
+	    android:layout_width="fill_parent"
+	    android:layout_height="1dp"
+	    android:background="#CCCCCC" 
+	     />
+  
+   <LinearLayout
+	android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:orientation="horizontal"
+    android:gravity="right" >
+    
+    <TextView
+        android:id="@+id/lvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" 
+        android:layout_gravity="left"
+        android:gravity="center_vertical"
+        android:textSize="20sp"
+        android:drawableLeft="@drawable/bc_contact"
+        android:drawablePadding="10dp"
+        android:layout_weight=".5"/>
+      
+	  <View 
+	    android:layout_width="1dp"
+	    android:layout_height="fill_parent"
+	    android:background="#CCCCCC" 
+	     />
+	 
+	  
+	    <ImageView 
+	        android:id="@+id/lvPhone"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/phone_small"
+	        android:paddingLeft="5dp"
+	        />
+    
+  	 </LinearLayout>
+
+   
+      	
+
+</LinearLayout>
