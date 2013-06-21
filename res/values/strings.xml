@@ -1,8 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Berea Phonebook</string>
+    <string name="app_name">Berea Quick Contact</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    
+    <string name="title_activity_about">About Berea Quick Contact</string>
+    <string name="about_title">About</string>
+    <string name="about_info">
+        &lt;b>Berea Quick Contact&lt;/b>&lt;br>
+        \u00A9 2013 Jacob Patton&lt;br>
+        Berea Quick Contact is open source and licensed under the Apache License Version 2.0.
+      </string>
+    
+    <string name="project_link">Project Link: https://github.com/pattonj/BereaPhonebook</string>
+    
+    <string name="help_title">Instructions</string>
+    <string name="help_info">        &lt;b>Viewing Contact Info&lt;/b>&lt;br>
+        To view information about a certain department or to send an email, simply click on the name. To call them directly, press the phone icon to the right of the department title. 
+</string>
+    <string name="resources_title">Resources</string>
+    <string name="resources_info">
+        &lt;b>ActionBarSherlock &lt;/b>&lt;br>
+        \u00A9 2013 Jake Wharton&lt;br>
+        ActionBarSherlock is licensed under the Apache License Version 2.0.
+        &lt;br>&lt;br>
+		
+		</string>
+    <string name="apache_license">&lt;b>The Apache License Version 2.0&lt;/b>&lt;br>
+		You may obtain a copy of the License at&lt;br>
+		&lt;a href=\'http://www.apache.org/licenses/LICENSE-2.0\'>"http://www.apache.org/licenses/LICENSE-2.0&lt;/a>
+	</string>
+	<string name="license">
+		Unless required by applicable law or agreed to in writing,software distributed under the License is distributed on an \'AS IS\'BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+	</string>
 
 </resources>

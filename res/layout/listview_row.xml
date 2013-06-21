@@ -13,7 +13,7 @@
   
    <LinearLayout
 	android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:paddingRight="10dp"
     android:paddingLeft="10dp"
     android:paddingTop="8dp"
@@ -21,17 +21,28 @@
     android:orientation="horizontal"
     android:gravity="right" >
     
+      <ImageView 
+	        android:id="@+id/icon"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/bc_contact"
+	        android:paddingRight="10dp"
+	        />  
+       
+       
     <TextView
         android:id="@+id/lvTitle"
         android:layout_width="0dp"
-        android:layout_height="wrap_content" 
+        android:layout_height="match_parent" 
         android:layout_gravity="left"
         android:gravity="center_vertical"
         android:textSize="20sp"
-        android:drawableLeft="@drawable/bc_contact"
-        android:drawablePadding="10dp"
-        android:layout_weight=".5"/>
-      
+        android:layout_weight=".5"
+        android:singleLine="true"
+        android:ellipsize="end"/>
+    
+   <!-- android:drawableLeft="@drawable/bc_contact"
+        android:drawablePadding="10dp" -->   
 	  <View 
 	    android:layout_width="1dp"
 	    android:layout_height="fill_parent"

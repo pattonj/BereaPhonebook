@@ -32,6 +32,18 @@ public class myArrayAdapter extends ArrayAdapter<String[]> {
 	    LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	    View rowView = inflater.inflate(R.layout.listview_row, parent, false);
 	    
+	    if(values.get(position)[0].trim().equalsIgnoreCase("public safety")){
+	    	ImageView icon = (ImageView) rowView.findViewById(R.id.icon);
+		    icon.setImageResource(R.drawable.bc_contact_ps);
+		    	
+	    }
+	    else if(values.get(position)[0].trim().equalsIgnoreCase("Health Services")){
+	    	ImageView icon = (ImageView) rowView.findViewById(R.id.icon);
+		    icon.setImageResource(R.drawable.bc_contact_hs);
+		    	
+	    }
+	    
+	    
 	    TextView textView = (TextView) rowView.findViewById(R.id.lvTitle);
 	    textView.setText(values.get(position)[0]);
 	    

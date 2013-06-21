@@ -8,9 +8,6 @@ import com.actionbarsherlock.app.SherlockListActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 
-
-
-
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
@@ -33,10 +30,13 @@ public class PhoneBook extends SherlockListActivity {
 	List<HashMap<String, String>> displayData;
 	List<String[]> allData;
 	List<String> listData;
+	String email ="";
 	
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
 		menu.add("Theme")
+		.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+		menu.add("About")
 		.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
 		return true;
 	}	
@@ -55,8 +55,9 @@ public class PhoneBook extends SherlockListActivity {
 		
 		
 		
-		getSupportActionBar().setDisplayShowHomeEnabled(false);
-		getSupportActionBar().setTitle("Berea Easy Phonebook");
+		getSupportActionBar().setDisplayShowHomeEnabled(true);
+		
+		getSupportActionBar().setTitle("Berea Quick Contact");
 		
 		
 		
@@ -85,9 +86,54 @@ public class PhoneBook extends SherlockListActivity {
 	}
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		
-		String info = "Phone: "+ allData.get(position)[1]+"\nAddress: "+allData.get(position)[3]+"\nHours: "+allData.get(position)[4]+"\n"; 
-		final String email = allData.get(position)[2];
+		String info="" ;
 		
+		if(!allData.get(position)[1].equals("")){
+			info += "Phone: "+ allData.get(position)[1];
+		};
+		
+		if(!allData.get(position)[2].equals("")){
+			info += "\nCPO: "+allData.get(position)[2];
+		};
+		
+		if(!allData.get(position)[4].equals("")){
+			info += "\nLocation: "+allData.get(position)[4];
+		};	
+		
+		if(!allData.get(position)[5].equals("")){
+			info += "\nHours: "+allData.get(position)[5];
+		};
+		
+		info += "\n";
+		
+					
+		email = allData.get(position)[3];
+		
+		if(email.equals("")){
+			buildAlertNoEmail(position, info);
+		}
+		else{
+			buildAlert(position, info);
+		}
+	}
+	
+	public void buildAlertNoEmail(int position, String info){
+		
+		new AlertDialog.Builder(this)
+		.setTitle(allData.get(position)[0])
+		.setNegativeButton("Close",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        // if this button is clicked, just close
+                        dialog.cancel();
+                    }
+		 })
+		.setMessage(info)
+		.show();
+		
+	}
+	
+	public void buildAlert(int position, String info){
+				
 		new AlertDialog.Builder(this)
 		.setTitle(allData.get(position)[0])
 		.setPositiveButton("Email",new DialogInterface.OnClickListener() {
@@ -109,6 +155,7 @@ public class PhoneBook extends SherlockListActivity {
 		.show();
 			
 	}
+	
 	
 	public void phoneCall(int position){
 		try {
@@ -155,6 +202,11 @@ public class PhoneBook extends SherlockListActivity {
 		    	super.recreate();	
 		    }
 		    
+		}
+		else if(item.getTitle().equals("About")){
+			//starts the about intent. 	
+			Intent intent = new Intent(this, About.class);
+			startActivity(intent);
 		}
 		
 		return true;
